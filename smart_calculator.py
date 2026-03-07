@@ -1,0 +1,37 @@
+"""
+What it must do:
+
+My calculator should feel like a real tool. It must run in a continuous loop until the user chooses to quit, and handle every interaction gracefully.
+
+
+Core requirements:
+
+1) The main menu should display clearly every time, showing the user their options: addition, subtraction, multiplication, division, exponentiation (**), modulo (%), and quit.
+2) Handle every possible bad input without crashing: letters instead of numbers, dividing by zero, empty input, special characters (Use try/except blocks for every input that expects a number)
+3) After each calculation display the result clearly and then ask: "Would you like to perform another calculation?" — this keeps the user in the loop.
+4) History feature — every calculation performed in the session gets stored in a list as a formatted string like "12.0 + 5.0 = 17.0".
+5) The user can type history from the main menu to see all calculations from the current session, or clear to wipe the history.
+
+
+Stretch goals:
+
+Let the user chain calculations by using the previous result as the first number
+Add a sqrt option using the math module
+Let the user save their history to a .txt file
+
+Project Structuration:
+1) Addition Function
+2) Substraction Function 
+3) Multiplication Function
+4) Division Function
+5) Exponentiation Function
+6) Modulo Function
+7) Sqrt Function
+8) Further Calculation Function
+9) History Function
+10) Run Everything Function
+11) Display Menu Function
+12) Get Number Input Function
+13) Display History Function
+14) Save History To File Function
+"""
