@@ -35,3 +35,12 @@ Project Structuration:
 13) Display History Function
 14) Save History To File Function
 """
+def get_number():
+    while True:
+        try:
+            number = int(input("Please input a number: "))
+            break
+        except ValueError:
+            print("Invalid input. Please enter a number: ")
+
+get_number()
