@@ -35,6 +35,7 @@ Project Structuration:
 13) Display History Function
 14) Save History To File Function
 """
+#Function that gets a  number input from the user:
 def get_number():
     while True:
         try:
@@ -42,34 +43,34 @@ def get_number():
             return (number)
         except ValueError:
             print("Invalid input. Please enter a number: ")
-
+#Function that displays the menu:
 def display():
     menu = ["1. Addition", "2. Subtraction", "3. Multiplication", "4. Division", "5. Exponentiation", "6. Modulo", "7. Sqrt", "8. History", "9. Clear History", "10. Save History", "11. Quit"]
     print("Please select an option: ")
     for item in menu:
         print (item)
-
+#Function that performs addition:
 def addition():
     a = get_number()
     b = get_number()
     count = a+b
     print(f"The result of this addition is: {count}")
     return f"{a} + {b} = {count}"
-
+#Function that performs substraction:
 def substraction():
     a = get_number()
     b = get_number()
     count = a-b
     print(f"The result of this substraction is: {count}")
     return f"{a} - {b} = {count}"
-
+#Function that performs multiplication:
 def multiplication():
     a = get_number()
     b = get_number()
     count = a*b
     print(f"The result of this multiplication is {count}")
     return f"{a} * {b} = {count}"
-
+#Function that performs division:
 def division():
     a = get_number()
     b = get_number()
@@ -79,14 +80,14 @@ def division():
     count = a/b
     print(f"The result of this division is {count}")
     return f"{a} / {b} = {count}"
-
+#Function that performs exponentiation:
 def exponentiation():
     a = get_number()
     b = get_number()
     count = a**b
     print(f"The result of this exponentiation is {count}")
     return f"{a} ** {b} = {count}"
-
+#Function that performs modulo:
 def modulo():
     a = get_number()
     b = get_number()
@@ -96,7 +97,7 @@ def modulo():
     count = a%b
     print(f"The result of this modulo is {count}")
     return f"{a} % {b} = {count}"
-
+#Function that performs square root:
 def sqrt():
     import math
     a = get_number()
@@ -106,10 +107,10 @@ def sqrt():
     count = math.sqrt(a)
     print(f"The result of this square root is {count}")
     return f"sqrt({a}) = {count}"
-
+#Function that stores the calculator's history:
 def history(history_list, entry):
     history_list.append(entry)
-
+#Function that display's the calculator's history:
 def display_history(history_list):
     if not history_list:
         print("No calculations yet.")
@@ -117,7 +118,7 @@ def display_history(history_list):
     print("Calculation history:")
     for index, item in enumerate(history_list, start=1):
         print(f"{index}. {item}")
-
+#Function that runs/links everythig together:
 def operation():
     history_list = []
     while True:
@@ -157,7 +158,7 @@ def operation():
             elif choice == 9:
                 history_list.clear()
                 print("History cleared.")
-            elif choice == 10:
+            elif choice == 10: #Saves history to a .txt file:
                 if not history_list:
                     print("No history to save.")
                 else:
@@ -165,13 +166,13 @@ def operation():
                         for item in history_list:
                             file.write(item + "\n")
                     print("History saved to history.txt")
-            elif choice == 11:
+            elif choice == 11: #Quits the Smart Calculator
                 print("Thanks for using the Smart Calculator, we'll see you again soon !")
                 break
             else:
                 print("Please enter a valid option between 1 and 11:")
         except ValueError:
             print("Invalid choice selected. Please enter a valid choice between 1 and 11: ")
-
+#Runs the calculator:
 if __name__ == "__main__":
     operation()
