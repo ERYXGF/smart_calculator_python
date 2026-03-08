@@ -55,25 +55,61 @@ def addition():
     count = a+b
     print(f"The result of this addition is: {count}")
 
+def substraction():
+    a = get_number()
+    b = get_number()
+    count = a-b
+    print(f"The result of this substraction is: {count}")
+
+def multiplication():
+    a = get_number()
+    b = get_number()
+    count = a*b
+    print(f"The result of this multiplication is {count}")
+
+def division():
+    a = get_number()
+    b = get_number()
+    count = a/b
+    print(f"The result of this division is {count}")
+
+def exponentiation():
+    a = get_number()
+    b = get_number()
+    count = a**b
+    print(f"The result of this exponentiation is {count}")
+
+def modulo():
+    a = get_number()
+    b = get_number()
+    count = a%b
+    print(f"The result of this modulo is {count}")
+
+def sqrt():
+    import math
+    a = get_number()
+    count = math.sqrt(a)
+    print(f"The result of this square root is {count}")
+
 def operation():
     while True:
         try:
             display()
             choice = int(input("Enter your choice (1-11):"))
             if choice == 1:
-                pass
+                addition()
             elif choice == 2:
-                pass
+                substraction()
             elif choice == 3:
-                pass
+                multiplication()
             elif choice == 4:
-                pass
+                division()
             elif choice == 5:
-                pass
+                exponentiation()
             elif choice == 6:
-                pass
+                modulo()
             elif choice == 7:
-                pass
+                sqrt()
             elif choice == 8:
                 pass
             elif choice == 9:
