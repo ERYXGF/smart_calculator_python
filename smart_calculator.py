@@ -49,6 +49,36 @@ def display():
     for item in menu:
         print (item)
 
+def operation():
+    while True:
+        display()
+        choice = int(input("Enter your choice (1-11):"))
+        if choice == 1:
+            pass
+        elif choice == 2:
+            pass
+        elif choice == 3:
+            pass
+        elif choice == 4:
+            pass
+        elif choice == 5:
+            pass
+        elif choice == 6:
+            pass
+        elif choice == 7:
+            pass
+        elif choice == 8:
+            pass
+        elif choice == 7:
+            pass
+        elif choice == 9:
+            pass
+        elif choice == 10:
+            pass
+        elif choice == 11:
+            print("Thanks for using the Smart Calculator, we'll see you again soon !")
+        else:
+            input("Please enter a valid option between 1 and 11:")
 
 
 
