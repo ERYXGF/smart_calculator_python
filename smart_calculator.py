@@ -88,6 +88,5 @@ def operation():
         except ValueError:
             print("Invalid choice selected. Please enter a valid choice between 1 and 11: ")
 
-display()
-get_number()
-addition()
+if __name__ == "main__":
+    operation()
