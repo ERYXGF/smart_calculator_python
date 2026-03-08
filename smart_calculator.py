@@ -38,7 +38,7 @@ Project Structuration:
 def get_number():
     while True:
         try:
-            number = int(input("Please enter a number: "))
+            number = float(input("Please enter a number: "))
             return (number)
         except ValueError:
             print("Invalid input. Please enter a number: ")
@@ -123,7 +123,7 @@ def operation():
     while True:
         try:
             display()
-            choice = int(input("Enter your choice (1-11):"))
+            choice = float(input("Enter your choice (1-11):"))
             if choice == 1:
                 entry = addition()
                 if entry:
