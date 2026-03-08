@@ -54,66 +54,109 @@ def addition():
     b = get_number()
     count = a+b
     print(f"The result of this addition is: {count}")
+    return f"{a} + {b} = {count}"
 
 def substraction():
     a = get_number()
     b = get_number()
     count = a-b
     print(f"The result of this substraction is: {count}")
+    return f"{a} - {b} = {count}"
 
 def multiplication():
     a = get_number()
     b = get_number()
     count = a*b
     print(f"The result of this multiplication is {count}")
+    return f"{a} * {b} = {count}"
 
 def division():
     a = get_number()
     b = get_number()
+    if b == 0:
+        print("Division by zero is not allowed.")
+        return None
     count = a/b
     print(f"The result of this division is {count}")
+    return f"{a} / {b} = {count}"
 
 def exponentiation():
     a = get_number()
     b = get_number()
     count = a**b
     print(f"The result of this exponentiation is {count}")
+    return f"{a} ** {b} = {count}"
 
 def modulo():
     a = get_number()
     b = get_number()
+    if b == 0:
+        print("Modulo by zero is not allowed.")
+        return None
     count = a%b
     print(f"The result of this modulo is {count}")
+    return f"{a} % {b} = {count}"
 
 def sqrt():
     import math
     a = get_number()
+    if a < 0:
+        print("Square root of a negative number is not supported.")
+        return None
     count = math.sqrt(a)
     print(f"The result of this square root is {count}")
+    return f"sqrt({a}) = {count}"
+
+def history(history_list, entry):
+    history_list.append(entry)
+
+def display_history(history_list):
+    if not history_list:
+        print("No calculations yet.")
+        return
+    print("Calculation history:")
+    for index, item in enumerate(history_list, start=1):
+        print(f"{index}. {item}")
 
 def operation():
+    history_list = []
     while True:
         try:
             display()
             choice = int(input("Enter your choice (1-11):"))
             if choice == 1:
-                addition()
+                entry = addition()
+                if entry:
+                    history(history_list, entry)
             elif choice == 2:
-                substraction()
+                entry = substraction()
+                if entry:
+                    history(history_list, entry)
             elif choice == 3:
-                multiplication()
+                entry = multiplication()
+                if entry:
+                    history(history_list, entry)
             elif choice == 4:
-                division()
+                entry = division()
+                if entry:
+                    history(history_list, entry)
             elif choice == 5:
-                exponentiation()
+                entry = exponentiation()
+                if entry:
+                    history(history_list, entry)
             elif choice == 6:
-                modulo()
+                entry = modulo()
+                if entry:
+                    history(history_list, entry)
             elif choice == 7:
-                sqrt()
+                entry = sqrt()
+                if entry:
+                    history(history_list, entry)
             elif choice == 8:
-                pass
+                display_history(history_list)
             elif choice == 9:
-                pass
+                history_list.clear()
+                print("History cleared.")
             elif choice == 10:
                 pass
             elif choice == 11:
@@ -124,5 +167,5 @@ def operation():
         except ValueError:
             print("Invalid choice selected. Please enter a valid choice between 1 and 11: ")
 
-if __name__ == "main__":
+if __name__ == "__main__":
     operation()
