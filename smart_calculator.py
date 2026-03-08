@@ -43,4 +43,14 @@ def get_number():
         except ValueError:
             print("Invalid input. Please enter a number: ")
 
+def display():
+    menu = ["1. Addition", "2. Subtraction", "3. Multiplication", "4. Division", "5. Exponentiation", "6. Modulo", "7. Sqrt", "8. History", "9. Clear History", "10. Save History", "11. Quit"]
+    print("Pease select an option: ")
+    for item in menu:
+        print (item)
+
+
+
+
+display()
 get_number()
