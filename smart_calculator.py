@@ -8,9 +8,9 @@ Core requirements:
 
 1) The main menu should display clearly every time, showing the user their options: addition, subtraction, multiplication, division, exponentiation (**), modulo (%), and quit.
 2) Handle every possible bad input without crashing: letters instead of numbers, dividing by zero, empty input, special characters (Use try/except blocks for every input that expects a number)
-3) After each calculation display the result clearly and then ask: "Would you like to perform another calculation?" — this keeps the user in the loop.
+3) After each calculation display the result clearly and then redisplay the main menu/display — this keeps the user in the loop.
 4) History feature — every calculation performed in the session gets stored in a list as a formatted string like "12.0 + 5.0 = 17.0".
-5) The user can type history from the main menu to see all calculations from the current session, or clear to wipe the history.
+5) The user can select history from the main menu to see all calculations from the current session, or clear to wipe the history.
 
 
 Stretch goals:
@@ -45,7 +45,7 @@ def get_number():
 
 def display():
     menu = ["1. Addition", "2. Subtraction", "3. Multiplication", "4. Division", "5. Exponentiation", "6. Modulo", "7. Sqrt", "8. History", "9. Clear History", "10. Save History", "11. Quit"]
-    print("Pease select an option: ")
+    print("Please select an option: ")
     for item in menu:
         print (item)
 
@@ -158,12 +158,18 @@ def operation():
                 history_list.clear()
                 print("History cleared.")
             elif choice == 10:
-                pass
+                if not history_list:
+                    print("No history to save.")
+                else:
+                    with open("history.txt", "w", encoding="utf-8") as file:
+                        for item in history_list:
+                            file.write(item + "\n")
+                    print("History saved to history.txt")
             elif choice == 11:
                 print("Thanks for using the Smart Calculator, we'll see you again soon !")
                 break
             else:
-                input("Please enter a valid option between 1 and 11:")
+                print("Please enter a valid option between 1 and 11:")
         except ValueError:
             print("Invalid choice selected. Please enter a valid choice between 1 and 11: ")
 
