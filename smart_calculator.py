@@ -38,7 +38,7 @@ Project Structuration:
 def get_number():
     while True:
         try:
-            number = int(input("Please input a number: "))
+            number = int(input("Please enter a number: "))
             return (number)
         except ValueError:
             print("Invalid input. Please enter a number: ")
@@ -50,9 +50,9 @@ def display():
         print (item)
 
 def addition():
-    count = 0
-    for i in (get_number()):
-        count += i
+    a = get_number()
+    b = get_number()
+    count = a+b
     print(f"The result of this addition is: {count}")
 
 def operation():
@@ -82,6 +82,7 @@ def operation():
                 pass
             elif choice == 11:
                 print("Thanks for using the Smart Calculator, we'll see you again soon !")
+                break
             else:
                 input("Please enter a valid option between 1 and 11:")
         except ValueError:
